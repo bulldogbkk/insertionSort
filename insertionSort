@@ -1,0 +1,16 @@
+FUNCTION insertionSort(arr)
+    # Traverse through 1 to length of arr
+    FOR i <- 1 TO length(arr) - 1 
+        key <- arr[i]
+
+        # Move elements of arr[0..i-1] that are greater than key
+        # to one position ahead of their current position
+        j <- i - 1
+        WHILE j >= 0 and key < arr[j] DO
+            arr[j + 1] <- arr[j]
+            j <- j - 1
+        END WHILE
+
+        arr[j + 1] <- key
+    NEXT
+END FUNCTION
